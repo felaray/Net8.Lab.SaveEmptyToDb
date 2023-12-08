@@ -10,7 +10,8 @@ namespace Net8.Lab.SaveEmptyToDb
         {
             var builder = WebApplication.CreateBuilder(args);
             builder.Services.AddDbContext<Net8LabSaveEmptyToDbContext>(options =>
-                options.UseSqlServer(builder.Configuration.GetConnectionString("Net8LabSaveEmptyToDbContext") ?? throw new InvalidOperationException("Connection string 'Net8LabSaveEmptyToDbContext' not found.")));
+            //memory
+            options.UseInMemoryDatabase("Net8LabSaveEmptyToDbContext"));
 
             // Add services to the container.
 

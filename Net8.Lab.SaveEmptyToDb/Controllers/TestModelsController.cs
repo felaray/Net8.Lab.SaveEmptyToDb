@@ -47,10 +47,6 @@ namespace Net8.Lab.SaveEmptyToDb.Controllers
         [HttpPost]
         public async Task<ActionResult<TestModel>> PostTestModel(TestModel testModel)
         {
-            if(testModel.MyName2 == null)
-            {
-                testModel.MyName2 = "";
-            }
             _context.TestModel.Add(testModel);
             await _context.SaveChangesAsync();
 
